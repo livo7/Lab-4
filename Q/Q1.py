@@ -4,18 +4,6 @@ class Item:
         self.value = value
 
 
-"""
-
-
-словарь
-capacity - вместимость
-weight - вес
-value - ценность
-node - узел
-
-"""
-
-
 def backpack(items, capacity):
     def node_bound_count(i, weight, value):
         if weight > capacity:
