@@ -44,12 +44,10 @@ if __name__ == "__main__":
         Item(2, 15),
         Item(2, 15),
         Item(2, 20),
-        Item(1, 5),
         Item(1, 15),
         Item(3, 20),
         Item(1, 25),
         Item(1, 15),
-        Item(1, 10),
         Item(2, 20),
         Item(2, 20),
     ]
