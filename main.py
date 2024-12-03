@@ -1,3 +1,6 @@
+from tracemalloc import stop
+
+
 items: dict[str:list] = {
     "r": [3, 25],  # rifle; key = r
     "x": [3, 20],  # axe; key = x
@@ -25,10 +28,10 @@ class Item:
 
 
 class Inventory:
-    def __init__(self, height: int, width: int):
+    def __init__(self, height: int, width: int, difficulty: int):
         self.inventory: list[Item] = []
         self.width = width
-        self.capacity = width * height
+        self.capacity = width * height - difficulty
         self.selected_items: list = []
 
     def add_item(self, item: Item) -> None:
@@ -86,7 +89,11 @@ def survival_points(start_points: int, selected_items: list, global_points: list
 
 
 if __name__ == "__main__":
-    inventory = Inventory(2, 4)
+    print(
+        f"Введите сложность, чем выше цыфра тем будет сложнее выжить.)",
+    )
+    difficulty = int(input())
+    inventory = Inventory(2, 4, difficulty)
     [inventory.add_item(item) for item in calculate_best_items(inventory.capacity)]
     print(inventory)
     print(f"Итоговые очки выживания:{survival_points(15, inventory.get_item(), select())}")
