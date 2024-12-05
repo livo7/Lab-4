@@ -90,7 +90,7 @@ def survival_points(start_points: int, selected_items: list, global_points: list
 
 if __name__ == "__main__":
     print(
-        f"Введите сложность, чем выше цыфра тем будет сложнее выжить.)",
+        f"Введите сложность, чем выше цыфра тем будет сложнее выжить. (от 0 до 1))",
     )
     difficulty = int(input())
     inventory = Inventory(2, 4, difficulty)
